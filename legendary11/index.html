@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Chennai Sharks Team Players and Scores">
+
+    <link rel="icon" href="../assets/img/sm-transparent.png" type="image/png">
+    <link rel="apple-touch-icon" href="../assets/img/sm-transparent.png" type="image/png">
+
+    <link rel="stylesheet" href="../assets/theme.min.css">
+
+    <title>Chennai Sharks - Selfmade Premier League 2021</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+        <a class="navbar-brand font-size-h6" href="">Chennai Sharks - SPL</a>
+    </div>
+</nav>
+
+<section>
+    <div class="row no-gutters d-block d-lg-flex">
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column bg-cover bg-hover"
+             style="background-image: url(https://workdrive.zoho.in/api/v1/download/pg4n31c2e71d9382e47b4a2fbaf0343bd6877);">
+            <div class="card bg-dark-5 text-white text-center bg-hover" style="min-height: 470px;"></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column bg-cover bg-hover" id="captain">
+            <div class="card bg-dark-5 text-white text-center" style="min-height: 470px;">
+                <div class="card-body mt-auto">
+                    <div>
+                        <h1 class="mb-0 font-weight-bolder text-white">Captain</h1>
+                        <h3 class="mb-0 font-weight-bolder text-white">Ajithkumar</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column bg-cover bg-hover" id="vice-captain">
+            <div class="card bg-dark-5 text-white text-center" style="min-height: 470px;">
+                <div class="card-body mt-auto mb-n11 py-8">
+                    <h1 class="mb-0 font-weight-bolder">Vice Captain</h1>
+                    <h3 class="mb-0 font-weight-bolder">Nishanth</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section py-12">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                <h2 class="mb-6">Team Members</h2>
+            </div>
+        </div>
+        <div class="row" id="player-list">
+
+        </div>
+    </div>
+</div>
+<script>
+    fetch(`http://localhost:8080/api/spl/team/8`).then(r => r.json()).then(r => {
+        document.getElementById('captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['captain']})`;
+        document.getElementById('vice-captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['vice_captain']})`;
+        let players = r['players'];
+        let html = '';
+        fetch('../assets/templates/odd.html').then(r => r.text()).then(odd => {
+            fetch('../assets/templates/even.html').then(r => r.text()).then(even => {
+                for (let i = 0; i < players.length; i++) {
+                    let name = players[i].name;
+                    let image = players[i]['profile_pic'];
+                    if (i % 2 === 0) {
+                        html += odd.replaceAll('{{name}}', name).replaceAll('{{image}}', image);
+                    } else {
+                        html += even.replaceAll('{{name}}', name).replaceAll('{{image}}', image);
+                    }
+                }
+                document.getElementById('player-list').innerHTML = html;
+            });
+        });
+    });
+</script>
+</body>
+</html>
