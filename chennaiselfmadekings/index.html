@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Unbeatables Team Players and Scores">
+    <meta name="description" content="Chennai Selfmade Kings Team Players and Scores">
 
     <link rel="icon" href="../assets/img/sm-transparent.png" type="image/png">
     <link rel="apple-touch-icon" href="../assets/img/sm-transparent.png" type="image/png">
 
     <link rel="stylesheet" href="../assets/theme.min.css">
 
-    <title>Unbeatables - Selfmade Premier League 2021</title>
+    <title>Chennai Selfmade Kings - Selfmade Premier League 2021</title>
 </head>
 <body>
 
 <nav class="navbar navbar-expand navbar-light">
     <div class="container">
-        <a class="navbar-brand font-size-h6" href="">Unbeatables - SPL</a>
+        <a class="navbar-brand font-size-h6" href="">Chennai Selfmade Kings - SPL</a>
     </div>
 </nav>
 
 <section>
     <div class="row no-gutters d-block d-lg-flex">
         <div class="col-12 col-md-6 col-lg-4 d-flex flex-column bg-cover bg-hover"
-             style="background-image: url(https://workdrive.zoho.in/api/v1/download/pg4n31c2e71d9382e47b4a2fbaf0343bd6877);">
+             style="background-image: url(https://workdrive.zoho.in/api/v1/download/pg4n36cf373aaf6c642a7a678960f82bad84e);">
             <div class="card bg-dark-5 text-white text-center bg-hover" style="min-height: 470px;"></div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 d-flex flex-column bg-cover bg-hover" id="captain">
@@ -31,7 +31,7 @@
                 <div class="card-body mt-auto">
                     <div>
                         <h1 class="mb-0 font-weight-bolder text-white">Captain</h1>
-                        <h3 class="mb-0 font-weight-bolder text-white">Mohamed Thaha</h3>
+                        <h3 class="mb-0 font-weight-bolder text-white">Hari Haran</h3>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <div class="card bg-dark-5 text-white text-center" style="min-height: 470px;">
                 <div class="card-body mt-auto mb-n11 py-8">
                     <h1 class="mb-0 font-weight-bolder">Vice Captain</h1>
-                    <h3 class="mb-0 font-weight-bolder">Prabhu Sai</h3>
+                    <h3 class="mb-0 font-weight-bolder">Shanthi</h3>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
     </div>
 </div>
 <script>
-    fetch(`https://eselfmade.in/api/spl/team/7`).then(r => r.json()).then(r => {
+    fetch(`https://eselfmade.in/api/spl/team/4`).then(r => r.json()).then(r => {
         document.getElementById('captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['captain']})`;
         document.getElementById('vice-captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['vice_captain']})`;
         let players = r['players'];

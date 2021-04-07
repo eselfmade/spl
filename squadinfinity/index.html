@@ -60,7 +60,7 @@
     </div>
 </div>
 <script>
-    fetch(`http://localhost:8080/api/spl/team/1`).then(r => r.json()).then(r => {
+    fetch(`https://eselfmade.in/api/spl/team/1`).then(r => r.json()).then(r => {
         document.getElementById('captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['captain']})`;
         document.getElementById('vice-captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['vice_captain']})`;
         let players = r['players'];
