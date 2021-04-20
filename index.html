@@ -111,6 +111,17 @@
     </div>
 </section>
 
+<section class="bg-success-soft pt-8 pb-4">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                <h2 class="mb-4">SPL Top Earners</h2>
+            </div>
+        </div>
+        <div class="row flex-fill flex-nowrap" style="overflow-x: scroll" id="2021-leaders"></div>
+    </div>
+</section>
+
 <section class="bg-info-soft pt-8">
     <div class="container">
         <div class="row justify-content-center">
@@ -756,6 +767,16 @@
                 .replaceAll('{{score}}', Math.round(player['score']));
         }
         document.getElementById('lg-score-card').innerHTML = html;
+    });
+    let leaders = `<div class="col-md-3"><div class="card"><img alt="" src="https://workdrive.zoho.in/api/v1/download/{{image}}" class="card-img-top"><div class="card-body text-center"><h3>{{name}}</h3><h5>{{team}}</h5><h5>Income: ₹{{income}}</h5></div></div></div>`;
+    fetch('https://eselfmade.in/api/spl/players/leaders').then(r => r.json()).then(r => {
+       let data = r['players'], html='';
+        for (let i = 0; i < data.length; i++) {
+            let player = data[i];
+            html += leaders.replace('{{name}}', player['name']).replace('{{image}}', player['profile_pic'])
+                .replace('{{income}}', player['income']).replace('{{team}}', player['team']);
+        }
+        document.getElementById('2021-leaders').innerHTML = html;
     });
 </script>
 <script src="assets/zoho/salesiq.min.js" type="text/javascript"></script>
