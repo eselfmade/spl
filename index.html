@@ -773,7 +773,7 @@
         }
         document.getElementById('lg-score-card').innerHTML = html;
     });
-    let leaders = `<div class="col-md-3 w-75"><div class="card"><img alt="" src="https://workdrive.zoho.in/api/v1/download/{{image}}" class="card-img-top w-auto"><div class="card-body text-center px-1"><h3 class="text-nowrap overflow-hidden">{{name}}</h3><h5>{{team}}</h5><h5>Income: ₹{{income}}</h5></div></div></div>`;
+    let leaders = `<div class="col-xl-3 col-md-4 w-75"><div class="card"><img alt="" src="https://workdrive.zoho.in/api/v1/download/{{image}}" class="card-img-top w-auto"><div class="card-body text-center px-1"><h3 class="text-nowrap overflow-hidden">{{name}}</h3><h5>{{team}}</h5><h5>Income: ₹{{income}}</h5></div></div></div>`;
     fetch('https://eselfmade.in/api/spl/players/leaders').then(r => r.json()).then(r => {
        let data = r['players'], html='';
         for (let i = 0; i < data.length; i++) {
