@@ -1,12 +1,14 @@
-<div class="col-12 col-md-6 pt-12">
+<div class="col-12 col-md-6">
     <div class="row align-items-center">
-        <div class="col-7 col-lg-6 offset-lg-n1">
-            <h2 class="mb-0">{{name}}</h2>
-        </div>
-        <div class="col-8 col-lg-6 offset-n3" style="z-index: -1">
+        <div class="col-8 col-lg-6">
             <div class="card">
-                <img src="https://workdrive.zoho.in/api/v1/download/{{image}}" alt="{{name}}" class="card-img-top">
+                <img src="https://workdrive.zoho.in/api/v1/download/{{image}}" alt="{{name}}"
+                     class="card-img-top">
             </div>
+        </div>
+        <div class="col-7 col-lg-6 offset-n3 offset-lg-n1 mt-2">
+            <h2 class="mb-0"><span class="bg-white">{{name}}</span></h2>
+            <h3 class="mb-0 text-center"><span class="text-warning bg-white">{{score}}</span></h3>
         </div>
     </div>
 </div>

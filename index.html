@@ -744,7 +744,6 @@
     });
     fetch(`https://eselfmade.in/api/spl/score/6`).then(r => r.json()).then(r => {
         $('.avg-score').text(r.score);
-        window['avg-score'] = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/6/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -758,7 +757,6 @@
     });
     fetch(`https://eselfmade.in/api/spl/score/7`).then(r => r.json()).then(r => {
         $('.ub-score').text(r.score);
-        window['ub-score'] = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/7/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -772,7 +770,6 @@
     });
     fetch(`https://eselfmade.in/api/spl/score/8`).then(r => r.json()).then(r => {
         $('.lg-score').text(r.score);
-        window['lg-score'] = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/8/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];

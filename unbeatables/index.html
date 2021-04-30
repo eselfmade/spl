@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Unbeatables Team Players and Scores">
 
-    <link rel="icon" href="https://workdrive.zoho.in/api/v1/download/pg4n35e3d898c98a149dba3e07c097c107153" type="image/png">
-    <link rel="apple-touch-icon" href="https://workdrive.zoho.in/api/v1/download/pg4n35e3d898c98a149dba3e07c097c107153" type="image/png">
+    <link rel="icon" href="https://workdrive.zoho.in/api/v1/download/pg4n35e3d898c98a149dba3e07c097c107153"
+          type="image/png">
+    <link rel="apple-touch-icon" href="https://workdrive.zoho.in/api/v1/download/pg4n35e3d898c98a149dba3e07c097c107153"
+          type="image/png">
 
     <link rel="stylesheet" href="../assets/theme.min.css">
 
@@ -75,10 +77,11 @@
                 for (let i = 0; i < players.length; i++) {
                     let name = players[i].name;
                     let image = players[i]['profile_pic'];
+                    let score = players[i]['score'];
                     if (i % 2 === 0) {
-                        html += odd.replaceAll('{{name}}', name).replaceAll('{{image}}', image);
+                        html += odd.split('{{name}}').join(name).split('{{image}}').join(image).split('{{score}}').join(score);
                     } else {
-                        html += even.replaceAll('{{name}}', name).replaceAll('{{image}}', image);
+                        html += even.split('{{name}}').join(name).split('{{image}}').join(image).split('{{score}}').join(score);
                     }
                 }
                 document.getElementById('player-list').innerHTML = html;

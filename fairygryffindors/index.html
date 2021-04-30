@@ -78,10 +78,11 @@
                 for (let i = 0; i < players.length; i++) {
                     let name = players[i].name;
                     let image = players[i]['profile_pic'];
+                    let score = players[i]['score'];
                     if (i % 2 === 0) {
-                        html += odd.replaceAll('{{name}}', name).replaceAll('{{image}}', image);
+                        html += odd.split('{{name}}').join(name).split('{{image}}').join(image).split('{{score}}').join(score);
                     } else {
-                        html += even.replaceAll('{{name}}', name).replaceAll('{{image}}', image);
+                        html += even.split('{{name}}').join(name).split('{{image}}').join(image).split('{{score}}').join(score);
                     }
                 }
                 document.getElementById('player-list').innerHTML = html;
