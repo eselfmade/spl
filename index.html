@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Selfmade Premier Legue | SPL 2021 | SPL. View Live updates of Selfmade Premier League 2021">
+    <meta name="description"
+          content="Selfmade Premier Legue | SPL 2021 | SPL. View Live updates of Selfmade Premier League 2021">
 
     <link rel="shortcut icon" href="/sm.png" type="image/png">
     <link rel="apple-touch-icon" href="/sm.png" type="image/png">
@@ -14,12 +15,19 @@
     <title>Selfmade Premier League | SPL 2021</title>
     <meta property="og:title" content="Selfmade Premier League | SPL 2021">
     <meta property="og:url" content="https://spl.eselfmade.in">
-    <meta property="og:description" content="Selfmade Premier League | SPL 2021 | SPL. View Live updates of Selfmade Premier League 2021">
+    <meta property="og:description"
+          content="Selfmade Premier League | SPL 2021 | SPL. View Live updates of Selfmade Premier League 2021">
     <meta property="og:image" content="https://spl.eselfmade.in/sm.png">
     <meta property="og:type" content="article">
 
     <meta name="author" content="Karthikeyan">
     <link rel="canonical" href="https://spl.eselfmade.in">
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "Application",
+        "url": "https://spl.eselfmade.in",
+        "logo": "https://spl.eselfmade.in/sm.png"
+    }</script>
 </head>
 <style>
     img.pt-img {
@@ -773,7 +781,7 @@
     });
     let leaders = `<div class="col-xl-3 col-md-4 w-75"><div class="card"><img alt="" src="https://workdrive.zoho.in/api/v1/download/{{image}}" class="card-img-top w-auto"><div class="card-body text-center px-1"><h3 class="text-nowrap overflow-hidden">{{name}}</h3><h5>{{team}}</h5><h5>Income: ₹{{income}}</h5></div></div></div>`;
     fetch('https://eselfmade.in/api/spl/players/leaders').then(r => r.json()).then(r => {
-       let data = r['players'], html='';
+        let data = r['players'], html = '';
         for (let i = 0; i < data.length; i++) {
             let player = data[i];
             html += leaders.replace('{{name}}', player['name']).replace('{{image}}', player['profile_pic'])
