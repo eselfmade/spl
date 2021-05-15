@@ -154,7 +154,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e73ae174c2cb144f93b5a137cecd19e2b9"
                                      class="score" alt="Fairy Gryffindors">
-                                <div class="gry-score"></div>
+                                <div id="gry-score"></div>
                             </div>
                             <div class="col-2 text-center align-self-center p-0">
                                 VS
@@ -162,7 +162,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e7dd730f91db34437e95e22faa55c75aa9"
                                      class="score" alt="Legendary 11's">
-                                <div class="lg-score"></div>
+                                <div id="lg-score"></div>
                             </div>
                         </div>
                         <hr>
@@ -234,7 +234,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e7895f75a2be154eeeb3e85eae0ce49971"
                                      class="score" alt="Chennai Sharks">
-                                <div class="shr-score"></div>
+                                <div id="shr-score"></div>
                             </div>
                             <div class="col-2 text-center align-self-center p-0">
                                 VS
@@ -242,7 +242,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e75ad277b567d749568fd31dc66b18b72b"
                                      class="score" alt="Squad Infinity">
-                                <div class="si-score"></div>
+                                <div id="si-score"></div>
                             </div>
                         </div>
                         <hr>
@@ -314,7 +314,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49"
                                      class="score" alt="Chennai Selfmade Kings">
-                                <div class="csk-score"></div>
+                                <div id="csk-score"></div>
                             </div>
                             <div class="col-2 text-center align-self-center p-0">
                                 VS
@@ -322,7 +322,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e727ed361a06754457bf94b696a5c71b91"
                                      class="score" alt="Selfmade Royals">
-                                <div class="sr-score"></div>
+                                <div id="sr-score"></div>
                             </div>
                         </div>
                         <hr>
@@ -394,7 +394,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e75678ea1f30554bbf9ccf704c7f8278c7"
                                      class="score" alt="Team Avengers">
-                                <div class="avg-score"></div>
+                                <div id="avg-score"></div>
                             </div>
                             <div class="col-2 text-center align-self-center p-0">
                                 VS
@@ -402,7 +402,7 @@
                             <div class="col-5 text-center p-0">
                                 <img src="https://workdrive.zoho.in/api/v1/download/2c7e7eb9b4740a8ff42809dc7bd3df42ae66e"
                                      class="score" alt="Unbeatables">
-                                <div class="ub-score"></div>
+                                <div id="ub-score"></div>
                             </div>
                         </div>
                         <hr>
@@ -734,8 +734,7 @@
     </div>
 </footer>
 <script src="assets/splide/splide.min.js"></script>
-<script src="assets/jquery/jquery.min.js"></script>
-<script src="assets/bootstrap.bundle.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
 <script>
     new Splide('#banner', {
         rewind: true,
@@ -744,7 +743,7 @@
     }).mount();
     let score = `<div class="row flex-nowrap text-center mt-1" style="border-radius: 50px;background-color: #8fdcb7"><div class="col-3 mx-0 px-0"><img src="https://workdrive.zoho.in/api/v1/download/{{image}}" class="pt-img pl-2 pr-0" alt="{{name}}"></div><div class="col-7 align-self-center px-0" style="text-transform: capitalize">{{name}}</div><div class="col-2 align-self-center px-0">{{score}}</div></div>`;
     fetch(`https://eselfmade.in/api/spl/score/1`).then(r => r.json()).then(r => {
-        $('.si-score').text(r.score);
+        document.getElementById('si-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/1/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -757,8 +756,7 @@
         document.getElementById('si-score-card').innerHTML = html;
     });
     fetch(`https://eselfmade.in/api/spl/score/2`).then(r => r.json()).then(r => {
-        $('.shr-score').text(r.score);
-        window['shi-score'] = r.score;
+        document.getElementById('shr-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/2/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -771,8 +769,7 @@
         document.getElementById('shr-score-card').innerHTML = html;
     });
     fetch(`https://eselfmade.in/api/spl/score/3`).then(r => r.json()).then(r => {
-        $('.gry-score').text(r.score);
-        window['gry-score'] = r.score;
+        document.getElementById('gry-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/3/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -785,8 +782,7 @@
         document.getElementById('gry-score-card').innerHTML = html;
     });
     fetch(`https://eselfmade.in/api/spl/score/4`).then(r => r.json()).then(r => {
-        $('.csk-score').text(r.score);
-        window['csk-score'] = r.score;
+        document.getElementById('csk-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/4/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -799,8 +795,7 @@
         document.getElementById('csk-score-card').innerHTML = html;
     });
     fetch(`https://eselfmade.in/api/spl/score/5`).then(r => r.json()).then(r => {
-        $('.sr-score').text(r.score);
-        window['sr-score'] = r.score;
+        document.getElementById('sr-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/5/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -813,7 +808,7 @@
         document.getElementById('sr-score-card').innerHTML = html;
     });
     fetch(`https://eselfmade.in/api/spl/score/6`).then(r => r.json()).then(r => {
-        $('.avg-score').text(r.score);
+        document.getElementById('avg-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/6/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -826,7 +821,7 @@
         document.getElementById('avg-score-card').innerHTML = html;
     });
     fetch(`https://eselfmade.in/api/spl/score/7`).then(r => r.json()).then(r => {
-        $('.ub-score').text(r.score);
+        document.getElementById('ub-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/7/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -839,7 +834,7 @@
         document.getElementById('ub-score-card').innerHTML = html;
     });
     fetch(`https://eselfmade.in/api/spl/score/8`).then(r => r.json()).then(r => {
-        $('.lg-score').text(r.score);
+        document.getElementById('lg-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/8/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
