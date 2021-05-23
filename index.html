@@ -863,7 +863,10 @@
         document.getElementById('2021-leaders').innerHTML = html;
         new LazyLoad({}).update();
     });
+    let link = document.createElement('link')
+    link.href = "https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap";
+    link.rel = "stylesheet";
+    document.body.append(link);
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel=stylesheet>
 </body>
 </html>
