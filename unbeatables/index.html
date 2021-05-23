@@ -19,6 +19,7 @@
     <meta property="og:description" content="Selfmade Premier League | SPL 2021 | Unbeatables Team Players and Scores">
     <meta property="og:image" content="https://eselfmade.in/api/images/2c7e7eb9b4740a8ff42809dc7bd3df42ae66e">
     <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <script type="application/ld+json">{
         "@context": "https://schema.org",
         "@type": "Application",
@@ -162,6 +163,8 @@
         </div>
     </div>
 </footer>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
 <script>
     fetch(`https://eselfmade.in/api/spl/team/7`).then(r => r.json()).then(r => {
         document.getElementById('captain').style.backgroundImage = `url(https://eselfmade.in/api/images/${r['team']['captain']})`;

@@ -39,7 +39,7 @@
         ga('create','UA-149866723-1','auto');
         ga('send','pageview');
     </script>
-    <!--@formatter:ofn-->
+    <!--@formatter:on-->
 </head>
 <body>
 
@@ -163,6 +163,8 @@
         </div>
     </div>
 </footer>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
 <script>
     fetch(`https://eselfmade.in/api/spl/team/5`).then(r => r.json()).then(r => {
         document.getElementById('captain').style.backgroundImage = `url(https://eselfmade.in/api/images/${r['team']['captain']})`;
