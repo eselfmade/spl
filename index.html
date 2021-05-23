@@ -758,9 +758,6 @@
         autoplay: true
     }).mount();
     let score = `<div class="row flex-nowrap text-center mt-1" style="border-radius: 50px;background-color: #8fdcb7"><div class="col-3 mx-0 px-0"><img src="https://eselfmade.in/api/images/{{image}}" class="pt-img pl-2 pr-0" alt="{{name}}"></div><div class="col-7 align-self-center px-0" style="text-transform: capitalize">{{name}}</div><div class="col-2 align-self-center px-0">{{score}}</div></div>`;
-    fetch(`https://eselfmade.in/api/spl/score/1`).then(r => r.json()).then(r => {
-        document.getElementById('si-score').textContent = r.score;
-    });
     fetch(`https://eselfmade.in/api/spl/team/1/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
         let html = '';
@@ -770,9 +767,6 @@
                 .join(Math.round(player['score']))
         }
         document.getElementById('si-score-card').innerHTML = html;
-    });
-    fetch(`https://eselfmade.in/api/spl/score/2`).then(r => r.json()).then(r => {
-        document.getElementById('shr-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/2/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -784,9 +778,6 @@
         }
         document.getElementById('shr-score-card').innerHTML = html;
     });
-    fetch(`https://eselfmade.in/api/spl/score/3`).then(r => r.json()).then(r => {
-        document.getElementById('gry-score').textContent = r.score;
-    });
     fetch(`https://eselfmade.in/api/spl/team/3/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
         let html = '';
@@ -796,9 +787,6 @@
                 .join(Math.round(player['score']))
         }
         document.getElementById('gry-score-card').innerHTML = html;
-    });
-    fetch(`https://eselfmade.in/api/spl/score/4`).then(r => r.json()).then(r => {
-        document.getElementById('csk-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/4/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -810,9 +798,6 @@
         }
         document.getElementById('csk-score-card').innerHTML = html;
     });
-    fetch(`https://eselfmade.in/api/spl/score/5`).then(r => r.json()).then(r => {
-        document.getElementById('sr-score').textContent = r.score;
-    });
     fetch(`https://eselfmade.in/api/spl/team/5/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
         let html = '';
@@ -822,9 +807,6 @@
                 .join(Math.round(player['score']))
         }
         document.getElementById('sr-score-card').innerHTML = html;
-    });
-    fetch(`https://eselfmade.in/api/spl/score/6`).then(r => r.json()).then(r => {
-        document.getElementById('avg-score').textContent = r.score;
     });
     fetch(`https://eselfmade.in/api/spl/team/6/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -836,9 +818,6 @@
         }
         document.getElementById('avg-score-card').innerHTML = html;
     });
-    fetch(`https://eselfmade.in/api/spl/score/7`).then(r => r.json()).then(r => {
-        document.getElementById('ub-score').textContent = r.score;
-    });
     fetch(`https://eselfmade.in/api/spl/team/7/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
         let html = '';
@@ -849,8 +828,16 @@
         }
         document.getElementById('ub-score-card').innerHTML = html;
     });
-    fetch(`https://eselfmade.in/api/spl/score/8`).then(r => r.json()).then(r => {
-        document.getElementById('lg-score').textContent = r.score;
+    fetch(`https://eselfmade.in/api/spl/score`).then(r => r.json()).then(r => {
+        document.getElementById('si-score').textContent = Math.round(r[1]);
+        document.getElementById('shr-score').textContent = Math.round(r[2]);
+        document.getElementById('gry-score').textContent = Math.round(r[3]);
+        document.getElementById('csk-score').textContent = Math.round(r[4]);
+        document.getElementById('sr-score').textContent = Math.round(r[5]);
+        document.getElementById('avg-score').textContent = Math.round(r[6]);
+        document.getElementById('ub-score').textContent = Math.round(r[7]);
+        document.getElementById('lg-score').textContent = Math.round(r[8]);
+
     });
     fetch(`https://eselfmade.in/api/spl/team/8/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
