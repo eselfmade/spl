@@ -682,8 +682,9 @@
                 <div class="col-12 col-md-3"><h4 class="mb-6 text-white">Selfmade</h4>
                     <ul class="list-unstyled list-inline mb-7 mb-md-0">
                         <li class="list-inline-item">
-                            <a href="https://www.instagram.com/ecomselfmade" target="_blank" class="text-gray-350">
-                                <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/ecomselfmade/" target="_blank">
+                                <img src="assets/icons/instagram.svg"
+                                     alt="EComSelfmade Instagram Page of Selfmade ECom Private Limited">
                             </a>
                         </li>
                     </ul>
@@ -759,6 +760,10 @@
         type: 'fade',
         autoplay: true
     }).mount();
+    let link = document.createElement('link')
+    link.href = "https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap";
+    link.rel = "stylesheet";
+    document.body.append(link);
     let score = `<div class="row flex-nowrap text-center mt-1" style="border-radius: 50px;background-color: #8fdcb7"><div class="col-3 mx-0 px-0"><img data-src="https://eselfmade.in/api/images/{{image}}" class="lazy pt-img pl-2 pr-0" alt="{{name}}"></div><div class="col-7 align-self-center px-0" style="text-transform: capitalize">{{name}}</div><div class="col-2 align-self-center px-0">{{score}}</div></div>`;
     fetch(`https://eselfmade.in/api/spl/team/1/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
@@ -863,10 +868,6 @@
         document.getElementById('2021-leaders').innerHTML = html;
         new LazyLoad({}).update();
     });
-    let link = document.createElement('link')
-    link.href = "https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap";
-    link.rel = "stylesheet";
-    document.body.append(link);
 </script>
 </body>
 </html>
