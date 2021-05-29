@@ -173,8 +173,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel=stylesheet>
 <script>
     fetch(`https://eselfmade.in/api/spl/team/1`).then(r => r.json()).then(r => {
-        document.getElementById('captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['captain']}?orig=true)`;
-        document.getElementById('vice-captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['vice_captain']}?orig=true)`;
+        document.getElementById('captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['captain']})`;
+        document.getElementById('vice-captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['vice_captain']})`;
         let players = r['players'];
         let html = '';
         fetch('../assets/templates/odd.html').then(r => r.text()).then(odd => {
