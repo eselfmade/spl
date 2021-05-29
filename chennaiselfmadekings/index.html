@@ -6,9 +6,9 @@
     <meta name="description"
           content="Selfmade Premier Legue | SPL 2021 | Chennai Selfmade Kings Team Players and Scores">
 
-    <link rel="shortcut icon" href="https://files-accl.zohopublic.in/public/workdrive-public/previewdata/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49?orig=true"
+    <link rel="shortcut icon" href="https://workdrive.zoho.in/api/v1/download/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49"
           type="image/png">
-    <link rel="apple-touch-icon" href="https://files-accl.zohopublic.in/public/workdrive-public/previewdata/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49?orig=true"
+    <link rel="apple-touch-icon" href="https://workdrive.zoho.in/api/v1/download/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49"
           type="image/png">
 
     <link rel="stylesheet" href="../assets/theme.min.css">
@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://spl.eselfmade.in/chennaiselfmadekings">
     <meta property="og:description"
           content="Selfmade Premier League | SPL 2021 | Chennai Selfmade Kings Team Players and Scores">
-    <meta property="og:image" content="https://files-accl.zohopublic.in/public/workdrive-public/previewdata/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49?orig=true">
+    <meta property="og:image" content="https://workdrive.zoho.in/api/v1/download/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49">
     <meta property="og:type" content="article">
 
     <script type="application/ld+json">{
@@ -60,7 +60,7 @@
 <section>
     <div class="row no-gutters d-block d-lg-flex">
         <div class="col-12 col-md-6 col-lg-4 d-flex flex-column bg-cover bg-hover"
-             style="background-image: url(https://files-accl.zohopublic.in/public/workdrive-public/previewdata/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49?orig=true);">
+             style="background-image: url(https://workdrive.zoho.in/api/v1/download/2c7e7b1bbe5bc61da45c18dd1b0cd98a34e49?orig=true);">
             <div class="card bg-dark-5 text-white text-center bg-hover" style="min-height: 470px;"></div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 d-flex flex-column bg-cover bg-hover" id="captain">
@@ -175,8 +175,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel=stylesheet>
 <script>
     fetch(`https://eselfmade.in/api/spl/team/4`).then(r => r.json()).then(r => {
-        document.getElementById('captain').style.backgroundImage = `url(https://files-accl.zohopublic.in/public/workdrive-public/previewdata/${r['team']['captain']}?orig=true)`;
-        document.getElementById('vice-captain').style.backgroundImage = `url(https://files-accl.zohopublic.in/public/workdrive-public/previewdata/${r['team']['vice_captain']}?orig=true)`;
+        document.getElementById('captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['captain']}?orig=true)`;
+        document.getElementById('vice-captain').style.backgroundImage = `url(https://workdrive.zoho.in/api/v1/download/${r['team']['vice_captain']}?orig=true)`;
         let players = r['players'];
         let html = '';
         fetch('../assets/templates/odd.html').then(r => r.text()).then(odd => {
