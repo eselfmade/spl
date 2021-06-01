@@ -642,6 +642,7 @@
 
     fetch(`https://eselfmade.in/api/spl/team/4/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
+        data.sort((a, b) => b.score - a.score);
         let html = '';
         for (let i = 0; i < data.length; i++) {
             let player = data[i];
@@ -652,6 +653,7 @@
     });
     fetch(`https://eselfmade.in/api/spl/team/6/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
+        data.sort((a, b) => b.score - a.score);
         let html = '';
         for (let i = 0; i < data.length; i++) {
             let player = data[i];
@@ -662,6 +664,7 @@
     });
     fetch(`https://eselfmade.in/api/spl/team/7/players/score`).then(r => r.json()).then(players => {
         let data = players['players'];
+        data.sort((a, b) => b.score - a.score);
         let html = '';
         for (let i = 0; i < data.length; i++) {
             let player = data[i];
