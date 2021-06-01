@@ -138,7 +138,7 @@
                 <h2 class="mb-4">SPL Top Earners</h2>
             </div>
         </div>
-        <div class="row flex-fill flex-nowrap overflow-auto" id="2021-leaders">
+        <div class="row flex-fill flex-nowrap" id="2021-leaders" style="overflow-x:scroll">
             <div class="col-xl-3 col-md-4">
                 <div class="card">
                     <img width="300" height="300" alt="" class="mx-auto"
@@ -167,7 +167,7 @@
                 <div class="card">
                     <img width="300" height="300" loading="lazy" alt="" class="mx-auto"
                          src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
-                    <div class="card-body text-center px-1"><h3 class="text-nowrap overflow-hidden"></h3>
+                    <div class="card-body text-center px-1"><h3 class="text-nowrap overflow-hidden">Player</h3>
                         <h5>Team</h5><h5>Income: ₹</h5></div>
                 </div>
             </div>
@@ -625,10 +625,7 @@
     </div>
 </footer>
 <link rel="stylesheet" href="assets/theme.min.css">
-<link rel="stylesheet" href="assets/splide/splide.min.css">
 <script src="assets/splide/splide.min.js"></script>
-<script src="assets/bootstrap.min.js"></script>
-<script src="assets/lazy/lazy.min.js"></script>
 <script>
     new Splide('#banner', {
         rewind: true,
@@ -637,6 +634,11 @@
         lazyLoad: true,
         drag: false
     }).mount();
+</script>
+<link rel="stylesheet" href="assets/splide/splide.min.css">
+<script src="assets/bootstrap.min.js"></script>
+<script src="assets/lazy/lazy.min.js"></script>
+<script>
     let link = document.createElement('link')
     link.href = "https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap";
     link.rel = "stylesheet";
