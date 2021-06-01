@@ -176,6 +176,7 @@
         document.getElementById('captain').style.backgroundImage = `url(https://download-accl.zoho.in/public/workdrive/download/${r['team']['captain']})`;
         document.getElementById('vice-captain').style.backgroundImage = `url(https://download-accl.zoho.in/public/workdrive/download/${r['team']['vice_captain']})`;
         let players = r['players'];
+        players.sort((a, b) => b.score - a.score);
         let html = '';
         fetch('../assets/templates/odd.html').then(r => r.text()).then(odd => {
             fetch('../assets/templates/even.html').then(r => r.text()).then(even => {
