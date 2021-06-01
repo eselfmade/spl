@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="Selfmade Premier Legue | SPL 2021 | SPL. View Live updates of Selfmade Premier League 2021">
-    <meta name="title" content="Selfmade Premier League | SPL 2021 | The Grand Finale | Live Score">
+    <meta name="title" content="Selfmade Premier League | SPL 2021 | Avengers vs CSK - The Grand Finale | Live Score">
 
     <link rel="shortcut icon" href="/sm.png" type="image/png">
     <link rel="apple-touch-icon" href="/sm.png" type="image/png">
 
-    <title>Selfmade Premier League | SPL 2021 | The Grand Finale | Live Score</title>
-    <meta property="og:title" content="Selfmade Premier League | SPL 2021 | The Grand Finale | Live Score">
+    <title>Selfmade Premier League | SPL 2021 | Avengers vs CSK - The Grand Finale | Live Score</title>
+    <meta property="og:title" content="Selfmade Premier League | SPL 2021 | Avengers vs CSK - The Grand Finale | Live Score">
     <meta property="og:url" content="https://spl.eselfmade.in">
     <meta property="og:description"
           content="Selfmade Premier League | SPL 2021 | SPL. View Live updates of Selfmade Premier League 2021">
@@ -613,21 +613,9 @@
         }
         document.getElementById('avg-score-card').innerHTML = html;
     });
-    fetch(`https://eselfmade.in/api/spl/team/7/players/score`).then(r => r.json()).then(players => {
-        let data = players['players'];
-        data.sort((a, b) => b.score - a.score);
-        let html = '';
-        for (let i = 0; i < data.length; i++) {
-            let player = data[i];
-            html += score.split('{{name}}').join(player.name).split('{{image}}').join(player.image).split('{{score}}')
-                .join(Math.round(player['score']))
-        }
-        document.getElementById('ub-score-card').innerHTML = html;
-    });
     fetch(`https://eselfmade.in/api/spl/score`).then(r => r.json()).then(r => {
         document.getElementById('csk-score').textContent = Math.round(r[4]);
         document.getElementById('avg-score').textContent = Math.round(r[6]);
-        document.getElementById('ub-score').textContent = Math.round(r[7]);
     });
     let leaders = `<div class="col-xl-3 col-md-4"><div class="card"><img width="300" height="300" loading="lazy" alt="{{name}} of {{team}} Selfmade Premier League. Total Income: {{income}}" data-src="https://download-accl.zoho.in/public/workdrive/download/{{image}}" class="lazy mx-auto"><div class="card-body text-center px-1"><h3 class="text-nowrap overflow-hidden">{{name}}</h3><h5>{{team}}</h5><h5>Income: ₹{{income}}</h5></div></div></div>`;
     fetch('https://eselfmade.in/api/spl/players/leaders').then(r => r.json()).then(r => {
